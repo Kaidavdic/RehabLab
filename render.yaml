@@ -2,5 +2,6 @@ services:
   - type: web
     name: rehablab-website
     env: node
+    plan: free
     buildCommand: npm install && npm run build
     startCommand: npm start
