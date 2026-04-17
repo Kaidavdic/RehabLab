@@ -113,9 +113,13 @@ app.get('/api/admin/messages', verifyToken, async (req, res) => {
   }
 });
 
-// The "catchall" handler: for any request that doesn't match an API route, send back React's index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+// The "catchall" handler za SPA rutiranje
+app.use((req, res, next) => {
+  if (req.method === 'GET') {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+  } else {
+    next();
+  }
 });
 
 app.listen(PORT, () => {
