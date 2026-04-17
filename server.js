@@ -21,8 +21,6 @@ app.use(express.json());
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/rehablab', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
 }).then(() => console.log('Povezano sa MongoDB'))
   .catch(err => console.error('Greška pri povezivanju na bazu:', err));
 
