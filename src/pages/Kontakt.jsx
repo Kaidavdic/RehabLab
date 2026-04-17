@@ -6,17 +6,44 @@ export default function Kontakt() {
   const [form, setForm] = useState({ ime: '', prezime: '', email: '', telefon: '', poruka: '' })
   const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value })
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      setSent(true)
-      setForm({ ime: '', prezime: '', email: '', telefon: '', poruka: '' })
-    }, 1200)
+    setErrorMsg('')
+    
+    const object = {
+      access_key: "YOUR_ACCESS_KEY_HERE",
+      subject: "Novi upit - RehabLab Website",
+      from_name: form.ime + " " + form.prezime,
+      Ime: form.ime,
+      Prezime: form.prezime,
+      Email: form.email,
+      Telefon: form.telefon,
+      Poruka: form.poruka
+    }
+    
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(object)
+      })
+      const data = await res.json()
+      
+      if (data.success) {
+        setSent(true)
+        setForm({ ime: '', prezime: '', email: '', telefon: '', poruka: '' })
+      } else {
+        setErrorMsg('Došlo je do greške prilikom slanja.')
+      }
+    } catch (err) {
+      setErrorMsg('Proverite internet konekciju i pokušajte ponovo.')
+    }
+    setLoading(false)
   }
 
   return (
@@ -112,6 +139,7 @@ export default function Kontakt() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="kontakt-form">
+                    {errorMsg && <div style={{ color: 'red', marginBottom: '15px' }}>{errorMsg}</div>}
                     <div className="form-row">
                       <div className="form-group">
                         <label htmlFor="ime">Ime *</label>

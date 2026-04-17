@@ -3,41 +3,23 @@ import './Home.css'
 
 const services = [
   {
-    icon: 'fas fa-bolt',
-    title: 'HILT Laser terapija',
-    desc: 'Visoko intenzivna laser terapija koja deluje duboko u tkivo, ubrzava zarastanje i smanjuje bol i upalu.',
+    icon: 'fas fa-heartbeat',
+    title: 'Naše usluge | RehabLab DŠ',
+    desc: 'Kompletna fizikalna terapija, kineziterapija, manualna terapija, masaže i hidžama.',
     link: '/usluge'
   },
   {
-    icon: 'fas fa-wave-square',
-    title: 'Shockwave terapija',
-    desc: 'Terapija udarnim talasima koja efikasno tretira hronične boli, tendinopatije i kalcifikacije.',
+    icon: 'fas fa-child',
+    title: 'Briga o najmlađima',
+    desc: 'Specijalizovani programi za pravilan rast i razvoj dece i razvoj motorike.',
     link: '/usluge'
   },
   {
-    icon: 'fas fa-fire',
-    title: 'Tekar terapija',
-    desc: 'Tecarterapia stimuliše prirodne procese regeneracije tkiva kroz radiofrekvencijsku energiju.',
+    icon: 'fas fa-female',
+    title: 'Podrška zdravlju žene',
+    desc: 'Programi dizajnirani za specifične potrebe, oblikovanje tela i aktivan život žena.',
     link: '/usluge'
-  },
-  {
-    icon: 'fas fa-running',
-    title: 'Kineziterapija',
-    desc: 'Individualni program vežbi za oporavak funkcije, snage i pokretljivosti uz stručno vođenje.',
-    link: '/usluge'
-  },
-  {
-    icon: 'fas fa-hands',
-    title: 'Manuelna terapija',
-    desc: 'Ručne tehnike mobilizacije i manipulacije zglobova i mekih tkiva za smanjenje bola.',
-    link: '/usluge'
-  },
-  {
-    icon: 'fas fa-spa',
-    title: 'Masaža',
-    desc: 'Terapeutska masaža za opuštanje mišića, poboljšanje cirkulacije i smanjenje napetosti.',
-    link: '/usluge'
-  },
+  }
 ]
 
 const whyUs = [

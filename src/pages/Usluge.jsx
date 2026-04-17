@@ -4,101 +4,64 @@ import './Usluge.css'
 
 const services = [
   {
-    id: 'hilt',
-    icon: 'fas fa-bolt',
-    title: 'HILT Laser terapija',
-    shortDesc: 'Visoko intenzivni laser koji deluje duboko u tkivo',
-    fullDesc: [
-      'HILT (High Intensity Laser Therapy) je savremena metoda fizikalne terapije koja koristi visoko intenzivni laserski zrak za lečenje raznih bolnih stanja mišićno-koštanog sistema.',
-      'Laser prodire duboko u tkivo, stimulišući ćelijsku regeneraciju, smanjujući upalu i bol, i ubrzavajući zarastanje povređenih tkiva. Terapija je bezbolna i ne zahteva posebne pripreme.',
-      'Indikacije: Artroze, diskus hernija, tendinopatije, sportske povrede, hronični bolovi u leđima i vratu, postoperativna rehabilitacija.'
-    ],
-    benefits: ['Brzo smanjenje bola', 'Duboko dejstvo na tkivo', 'Bez nuspojava', 'Kratke sesije']
+    id: 'opste',
+    icon: 'fas fa-heartbeat',
+    title: 'Naše usluge | RehabLab DŠ',
+    shortDesc: 'Kompletna fizikalna terapija i rehabilitacija za sve uzraste.',
+    items: [
+      'Individualni fizioterapijski tretmani',
+      'Rehabilitacija nakon povreda i operacija',
+      'Terapija bola (leđa, vrat, zglobovi)',
+      'Kineziterapija (terapijske vežbe)',
+      'Sportska rehabilitacija',
+      'Korektivne vežbe i posturalna korekcija',
+      'Manualna terapija',
+      'Masaže',
+      'Hidžama (cupping terapija)',
+      'Programi za jačanje i oporavak tela'
+    ]
   },
   {
-    id: 'shockwave',
-    icon: 'fas fa-wave-square',
-    title: 'Shockwave terapija',
-    shortDesc: 'Terapija udarnim talasima za hronične bolove',
-    fullDesc: [
-      'Shockwave (Radijalni udarni talasi) terapija je neinvazivna metoda lečenja hroničnih bolnih stanja primenom akustičnih talasa visoke energije.',
-      'Talasi stimulišu proces zarastanja, razgrađuju kalcijumove depozite, poboljšavaju cirkulaciju i smanjuju bol. Posebno efektivna za stanja koja ne reaguju na klasičnu terapiju.',
-      'Indikacije: Plantarni fasciitis, kalcifikacije tetiva, lateralni epikondilitis ("teniski lakat"), tendinopatija Ahilove tetive, sindrom karpalnog tunela.'
-    ],
-    benefits: ['Efikasna kod hroničnih stanja', 'Razgradnja kalcifikacija', 'Stimulacija regeneracije', 'Vidljivi rezultati']
+    id: 'deca',
+    icon: 'fas fa-child',
+    title: 'Briga o najmlađima',
+    shortDesc: 'Specijalizovani programi za pravilan rast i razvoj dece.',
+    items: [
+      'Razvoj motorike kroz igru',
+      'Vežbe za pravilno držanje tela',
+      'Jačanje mišića i stabilnosti',
+      'Vežbe za ravnotežu i koordinaciju',
+      'Vežbe za stopala i pravilan hod',
+      'Programi za pravilan rast i razvoj',
+      'Podrška deci u razvoju',
+      'Rad sa decom kojoj je potrebna dodatna podrška u razvoju',
+      'Individualni fizioterapijski rad',
+      'Prevencija problema sa kičmom',
+      'Funkcionalno vežbanje kroz igru',
+      'Individualna procena',
+      'Senzorne vežbe i stimulacija'
+    ]
   },
   {
-    id: 'tekar',
-    icon: 'fas fa-fire',
-    title: 'Tekar terapija',
-    shortDesc: 'Duboko zagrevanje tkiva radiofrekvencijom',
-    fullDesc: [
-      'Tekar terapija (Tecarterapia) je fizikalna metoda koja koristi radiofrekvencijsku energiju za zagrevanje tkiva i stimulaciju prirodnih mehanizama regeneracije.',
-      'Postoje dva načina primene: kateforeza (deluje na kosti, zglobove, mišiće) i rezistivni mod (deluje na meka tkiva). Kombinacijom oba postiže se sveobuhvatno delovanje.',
-      'Indikacije: Artroze, mišićni bolovi, sportske povrede, kontrakture, edemi, postoperativna rehabilitacija, bolovi u leđima.'
-    ],
-    benefits: ['Duboko zagrevanje', 'Brza cirkulacija', 'Smanjenje ukočenosti', 'Ubrzanje oporavka']
-  },
-  {
-    id: 'kinezi',
-    icon: 'fas fa-running',
-    title: 'Kineziterapija',
-    shortDesc: 'Individualni program terapeutskih vežbi',
-    fullDesc: [
-      'Kineziterapija je terapija pokretom – skup individualno prilagođenih vežbi koje imaju za cilj obnavljanje i poboljšanje funkcije mišića, zglobova i nervnog sistema.',
-      'Program se kreira na osnovu detaljne procene i prilagođavaju se svakom pacijentu. Vežbe se sprovode pod stručnim nadzorom fizioterapeuta ili kineziterapeuta.',
-      'Indikacije: Postoperativna rehabilitacija, neurološka oboljenja, mišićna slabost, bolovi u kičmi, sportska rehabilitacija, prevencija povreda.'
-    ],
-    benefits: ['Vežbe po meri', 'Stručno vođenje', 'Dugotrajan efekat', 'Prevencija povreda']
-  },
-  {
-    id: 'manuelna',
-    icon: 'fas fa-hands',
-    title: 'Manuelna terapija',
-    shortDesc: 'Ručne tehnike mobilizacije i manipulacije',
-    fullDesc: [
-      'Manuelna terapija obuhvata skup stručnih ručnih tehnika koje fizioterapeut primenjuje direktno na telu pacijenta, sa ciljem smanjenja bola i poboljšanja pokretljivosti.',
-      'Uključuje tehnike mobilizacije zglobova, manipulacije, meka tkivne tehnike (miofascijalno otpuštanje, trigger point terapija) i neuralne mobilizacije.',
-      'Indikacije: Bolovi u vratu i leđima, blokade zglobova, ograničena pokretljivost, glavobolje cervikalnog porekla, tenziona bol.'
-    ],
-    benefits: ['Trenutno olakšanje', 'Vraćanje pokretljivosti', 'Bez aparata', 'Precizne tehnike']
-  },
-  {
-    id: 'masaza',
-    icon: 'fas fa-spa',
-    title: 'Masaža',
-    shortDesc: 'Terapeutska i relaksaciona masaža tela',
-    fullDesc: [
-      'Terapeutska masaža je ručna tehnika kojom se deluje na meko tkivo tela – mišiće, fascije i vezivno tkivo – u cilju smanjenja napetosti, poboljšanja cirkulacije i otklanjanja bola.',
-      'Nudimo klasičnu terapeutsku masažu, sportsku masažu, masažu leđa i vrata, limfnu drenažu i relaksacionu masažu celog tela.',
-      'Indikacije: Mišićna napetost i bolovi, stres, loša cirkulacija, sportski oporavak, prevencija povreda, opšta relaksacija.'
-    ],
-    benefits: ['Opuštanje mišića', 'Bolja cirkulacija', 'Smanjenje stresa', 'Brz oporavak']
-  },
-  {
-    id: 'ultrazvuk',
-    icon: 'fas fa-broadcast-tower',
-    title: 'Ultrazvuk terapija',
-    shortDesc: 'Terapeutski ultrazvuk za zarastanje mekih tkiva',
-    fullDesc: [
-      'Terapeutski ultrazvuk koristi zvučne talase visoke frekvencije za prodiranje u duboka tkiva i stimulaciju procesa zarastanja.',
-      'Deluje termički (zagrevanje tkiva) i mehanički (mikrovibracijom ćelija). Ubrzava zarastanje, smanjuje bol i poboljšava elastičnost tkiva.',
-      'Indikacije: Tendinopatije, kapsulitis, mišićne kontrakture, sportske povrede, poremećaji zarastanja rana.'
-    ],
-    benefits: ['Duboko delovanje', 'Termički efekat', 'Ubrzano zarastanje', 'Smanjenje bola']
-  },
-  {
-    id: 'elektro',
-    icon: 'fas fa-plug',
-    title: 'Elektroterapija',
-    shortDesc: 'TENS, interferentne struje i elektrostimulacija',
-    fullDesc: [
-      'Elektroterapija obuhvata primenu različitih vrsta električne struje u terapeutske svrhe. Uključuje TENS (transcutaneous electrical nerve stimulation), interferentne struje, diadinamičke struje i elektrostimulaciju mišića.',
-      'TENS deluje na smanjenje bola modulacijom nervnih signala, dok elektrostimulacija jača oslabljene mišiće i poboljšava funkciju.',
-      'Indikacije: Hronični i akutni bolovi, mišićna atrofija, neurološka stanja, postoperativna terapija.'
-    ],
-    benefits: ['Bezbolna terapija', 'Jačanje mišića', 'Kontrola bola', 'Neurološka stimulacija']
-  },
+    id: 'zene',
+    icon: 'fas fa-female',
+    title: 'Podrška zdravlju žene',
+    shortDesc: 'Programi dizajnirani za specifične potrebe i izazove žena.',
+    items: [
+      'Smanjenje bola u leđima i vratu',
+      'Korekcija i unapređenje posture',
+      'Jačanje mišića i stabilnosti tela',
+      'Poboljšanje pokretljivosti i fleksibilnosti',
+      'Oblikovanje i zatezanje tela',
+      'Jačanje stomaka, leđa i nogu',
+      'Funkcionalni treninzi i kondicija',
+      'Programi za aktivan život bez bola',
+      'Programi za žene sa sedelačkim načinom života',
+      'Relaks i antistres masaže',
+      'Hidžama (prilagođena ženama)',
+      'Individualno prilagođen pristup'
+    ]
+  }
 ]
 
 export default function Usluge() {
@@ -140,18 +103,16 @@ export default function Usluge() {
 
                 {activeService === s.id && (
                   <div className="usluga-detail">
-                    {s.fullDesc.map((par, i) => (
-                      <p key={i}>{par}</p>
-                    ))}
-                    <div className="usluga-benefits">
-                      {s.benefits.map((b, i) => (
-                        <span className="benefit-tag" key={i}>
-                          <i className="fas fa-check"></i> {b}
-                        </span>
+                    <ul style={{ listStyle: 'none', padding: 0, display: 'grid', gap: '10px' }}>
+                      {s.items.map((item, i) => (
+                        <li key={i} style={{ display: 'flex', alignItems: 'center' }}>
+                          <i className="fas fa-check" style={{ color: 'var(--primary)', marginRight: '12px' }}></i>
+                          <span style={{ fontSize: '1.05rem', color: 'var(--text-color)' }}>{item}</span>
+                        </li>
                       ))}
-                    </div>
-                    <Link to="/kontakt" className="btn-primary usluga-cta">
-                      Zakažite terapiju
+                    </ul>
+                    <Link to="/kontakt" className="btn-primary usluga-cta" style={{ marginTop: '24px', display: 'inline-block' }}>
+                      Zakažite pregled
                     </Link>
                   </div>
                 )}
