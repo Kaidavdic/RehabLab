@@ -64,7 +64,39 @@ app.post('/api/contact', async (req, res) => {
         to: process.env.SMTP_USER,
         replyTo: email,
         subject: `Novi upit sa sajta: ${ime} ${prezime}`,
-        text: `Poruka: ${poruka}\nKontakt: ${telefon}`,
+        text: `Ime i prezime: ${ime} ${prezime}\nEmail: ${email}\nTelefon: ${telefon || 'Nije unet'}\n\nPoruka:\n${poruka}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <div style="background-color: #5ba781; color: white; padding: 20px; text-align: center;">
+              <h2 style="margin: 0; font-size: 24px;">RehabLab</h2>
+              <p style="margin: 5px 0 0; opacity: 0.9;">Novi upit sa kontakt forme</p>
+            </div>
+            <div style="padding: 30px; background-color: #ffffff;">
+              <p style="margin-bottom: 20px; font-size: 16px; color: #333;">Dobili ste novu poruku od pacijenta:</p>
+              
+              <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
+                <tr>
+                  <td style="padding: 10px; border-bottom: 1px solid #eee; width: 120px; color: #666; font-weight: bold;">Ime i prezime:</td>
+                  <td style="padding: 10px; border-bottom: 1px solid #eee; color: #333; font-weight: 500;">${ime} ${prezime}</td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px; border-bottom: 1px solid #eee; color: #666; font-weight: bold;">Email adresa:</td>
+                  <td style="padding: 10px; border-bottom: 1px solid #eee; color: #333; font-weight: 500;"><a href="mailto:${email}" style="color: #5ba781; text-decoration: none;">${email}</a></td>
+                </tr>
+                <tr>
+                  <td style="padding: 10px; border-bottom: 1px solid #eee; color: #666; font-weight: bold;">Telefon:</td>
+                  <td style="padding: 10px; border-bottom: 1px solid #eee; color: #333; font-weight: 500;">${telefon || 'Nije unet'}</td>
+                </tr>
+              </table>
+              
+              <h3 style="color: #5ba781; margin-bottom: 10px; font-size: 18px; border-bottom: 2px solid #f0f0f0; padding-bottom: 5px;">Poruka:</h3>
+              <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #5ba781; color: #444; line-height: 1.6; font-size: 15px; white-space: pre-wrap;">${poruka}</div>
+            </div>
+            <div style="background-color: #f5f7fa; padding: 15px; text-align: center; color: #888; font-size: 13px; border-top: 1px solid #eee;">
+              Ovaj mejl je automatski poslat sa vašeg sajta <strong>RehabLab</strong>.
+            </div>
+          </div>
+        `,
       });
     } catch (mailError) {
       console.log('Poruka sačuvana, ali slanje emaila nije uspelo.', mailError);
