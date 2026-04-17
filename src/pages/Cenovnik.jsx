@@ -3,79 +3,58 @@ import './Cenovnik.css'
 
 const priceCategories = [
   {
-    title: 'Laser terapija',
-    icon: 'fas fa-bolt',
+    title: 'Naše usluge | RehabLab DŠ',
+    icon: 'fas fa-heartbeat',
     items: [
-      { name: 'HILT Laser – jedna sesija', price: '2.500 RSD' },
-      { name: 'HILT Laser – 5 sesija', price: '11.000 RSD' },
-      { name: 'HILT Laser – 10 sesija', price: '20.000 RSD' },
+      { name: 'Individualni fizioterapijski tretmani', price: 'Na upit' },
+      { name: 'Rehabilitacija nakon povreda i operacija', price: 'Na upit' },
+      { name: 'Terapija bola (leđa, vrat, zglobovi)', price: 'Na upit' },
+      { name: 'Kineziterapija (terapijske vežbe)', price: 'Na upit' },
+      { name: 'Sportska rehabilitacija', price: 'Na upit' },
+      { name: 'Korektivne vežbe i posturalna korekcija', price: 'Na upit' },
+      { name: 'Manualna terapija', price: 'Na upit' },
+      { name: 'Masaže', price: 'Na upit' },
+      { name: 'Hidžama (cupping terapija)', price: 'Na upit' },
+      { name: 'Programi za jačanje i oporavak tela', price: 'Na upit' },
     ]
   },
   {
-    title: 'Shockwave terapija',
-    icon: 'fas fa-wave-square',
+    title: 'Briga o najmlađima',
+    icon: 'fas fa-child',
     items: [
-      { name: 'Shockwave – jedna sesija', price: '3.000 RSD' },
-      { name: 'Shockwave – 5 sesija', price: '13.000 RSD' },
-      { name: 'Shockwave – 10 sesija', price: '25.000 RSD' },
+      { name: 'Razvoj motorike kroz igru', price: 'Na upit' },
+      { name: 'Vežbe za pravilno držanje tela', price: 'Na upit' },
+      { name: 'Jačanje mišića i stabilnosti', price: 'Na upit' },
+      { name: 'Vežbe za ravnotežu i koordinaciju', price: 'Na upit' },
+      { name: 'Vežbe za stopala i pravilan hod', price: 'Na upit' },
+      { name: 'Programi za pravilan rast i razvoj', price: 'Na upit' },
+      { name: 'Podrška deci u razvoju', price: 'Na upit' },
+      { name: 'Rad sa decom kojoj je potrebna dodatna podrška', price: 'Na upit' },
+      { name: 'Individualni fizioterapijski rad', price: 'Na upit' },
+      { name: 'Prevencija problema sa kičmom', price: 'Na upit' },
+      { name: 'Funkcionalno vežbanje kroz igru', price: 'Na upit' },
+      { name: 'Individualna procena', price: 'Na upit' },
+      { name: 'Senzorne vežbe i stimulacija', price: 'Na upit' },
     ]
   },
   {
-    title: 'Tekar terapija',
-    icon: 'fas fa-fire',
+    title: 'Podrška zdravlju žene',
+    icon: 'fas fa-female',
     items: [
-      { name: 'Tekar – jedna sesija', price: '2.000 RSD' },
-      { name: 'Tekar – 5 sesija', price: '9.000 RSD' },
-      { name: 'Tekar – 10 sesija', price: '17.000 RSD' },
+      { name: 'Smanjenje bola u leđima i vratu', price: 'Na upit' },
+      { name: 'Korekcija i unapređenje posture', price: 'Na upit' },
+      { name: 'Jačanje mišića i stabilnosti tela', price: 'Na upit' },
+      { name: 'Poboljšanje pokretljivosti i fleksibilnosti', price: 'Na upit' },
+      { name: 'Oblikovanje i zatezanje tela', price: 'Na upit' },
+      { name: 'Jačanje stomaka, leđa i nogu', price: 'Na upit' },
+      { name: 'Funkcionalni treninzi i kondicija', price: 'Na upit' },
+      { name: 'Programi za aktivan život bez bola', price: 'Na upit' },
+      { name: 'Programi za žene sa sedelačkim načinom života', price: 'Na upit' },
+      { name: 'Relaks i antistres masaže', price: 'Na upit' },
+      { name: 'Hidžama (prilagođena ženama)', price: 'Na upit' },
+      { name: 'Individualno prilagođen pristup', price: 'Na upit' },
     ]
-  },
-  {
-    title: 'Kineziterapija',
-    icon: 'fas fa-running',
-    items: [
-      { name: 'Individualna kineziterapija – 45 min', price: '2.000 RSD' },
-      { name: 'Individualna kineziterapija – 10 sesija', price: '18.000 RSD' },
-      { name: 'Grupna kineziterapija – 45 min', price: '1.200 RSD' },
-    ]
-  },
-  {
-    title: 'Manuelna terapija',
-    icon: 'fas fa-hands',
-    items: [
-      { name: 'Manuelna terapija – 30 min', price: '2.500 RSD' },
-      { name: 'Manuelna terapija – 60 min', price: '4.000 RSD' },
-      { name: 'Manuelna terapija – 5 sesija', price: '11.500 RSD' },
-    ]
-  },
-  {
-    title: 'Masaža',
-    icon: 'fas fa-spa',
-    items: [
-      { name: 'Masaža leđa – 30 min', price: '2.000 RSD' },
-      { name: 'Masaža celog tela – 60 min', price: '3.500 RSD' },
-      { name: 'Sportska masaža – 45 min', price: '2.800 RSD' },
-      { name: 'Relaksaciona masaža – 60 min', price: '3.000 RSD' },
-    ]
-  },
-  {
-    title: 'Elektroterapija i ultrazvuk',
-    icon: 'fas fa-plug',
-    items: [
-      { name: 'TENS terapija', price: '800 RSD' },
-      { name: 'Ultrazvuk terapija', price: '800 RSD' },
-      { name: 'Interferentne struje', price: '800 RSD' },
-      { name: 'Kombinovana elektroterapija', price: '1.200 RSD' },
-    ]
-  },
-  {
-    title: 'Pregledi i konsultacije',
-    icon: 'fas fa-user-md',
-    items: [
-      { name: 'Inicijalni pregled i procena', price: '2.000 RSD' },
-      { name: 'Kontrolni pregled', price: '1.000 RSD' },
-      { name: 'Konsultacija sa fizijatrom', price: '2.500 RSD' },
-    ]
-  },
+  }
 ]
 
 export default function Cenovnik() {
