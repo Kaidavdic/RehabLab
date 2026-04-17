@@ -1,5 +1,5 @@
 import express from 'express';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -53,18 +53,15 @@ app.post('/api/contact', async (req, res) => {
     const newMessage = new Message({ ime, prezime, email, telefon, poruka });
     await newMessage.save();
 
-    // Pošalji mejl (neobavezno, ali korisno kao notifikacija)
+    // Pošalji mejl preko Resend API-ja
     try {
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-      });
-      await transporter.sendMail({
-        from: process.env.SMTP_USER,
+      const resend = new Resend(process.env.RESEND_API_KEY);
+      
+      const { data, error } = await resend.emails.send({
+        from: 'RehabLab <onboarding@resend.dev>',
         to: process.env.SMTP_USER,
-        replyTo: email,
+        reply_to: email,
         subject: `Novi upit sa sajta: ${ime} ${prezime}`,
-        text: `Ime i prezime: ${ime} ${prezime}\nEmail: ${email}\nTelefon: ${telefon || 'Nije unet'}\n\nPoruka:\n${poruka}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #eee; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
             <div style="background-color: #5ba781; color: white; padding: 20px; text-align: center;">
@@ -98,8 +95,12 @@ app.post('/api/contact', async (req, res) => {
           </div>
         `,
       });
+
+      if (error) {
+        console.error('Greška iz Resend API-ja:', error);
+      }
     } catch (mailError) {
-      console.log('Poruka sačuvana, ali slanje emaila nije uspelo.', mailError);
+      console.log('Poruka sačuvana, ali HTTP zahtev ka Resendu nije uspeo.', mailError);
     }
 
     res.status(200).json({ success: true, message: 'Email uspešno poslat i poruka sačuvana.' });
