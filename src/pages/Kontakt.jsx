@@ -16,18 +16,15 @@ export default function Kontakt() {
     setErrorMsg('')
     
     const object = {
-      access_key: "YOUR_ACCESS_KEY_HERE",
-      subject: "Novi upit - RehabLab Website",
-      from_name: form.ime + " " + form.prezime,
-      Ime: form.ime,
-      Prezime: form.prezime,
-      Email: form.email,
-      Telefon: form.telefon,
-      Poruka: form.poruka
+      ime: form.ime,
+      prezime: form.prezime,
+      email: form.email,
+      telefon: form.telefon,
+      poruka: form.poruka
     }
     
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(object)
@@ -38,7 +35,7 @@ export default function Kontakt() {
         setSent(true)
         setForm({ ime: '', prezime: '', email: '', telefon: '', poruka: '' })
       } else {
-        setErrorMsg('Došlo je do greške prilikom slanja.')
+        setErrorMsg(data.message || 'Došlo je do greške prilikom slanja.')
       }
     } catch (err) {
       setErrorMsg('Proverite internet konekciju i pokušajte ponovo.')
